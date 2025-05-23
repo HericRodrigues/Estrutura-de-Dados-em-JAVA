@@ -164,7 +164,7 @@ public class Main {
 //            for (int n: conj) {
 //                System.out.println(n);
 //            }
-//Exercício 7 - Simulando uma fila\\
+//Exercício 8 - Simulando uma fila\\
 //Use Queue com LinkedList para simular uma fila de pessoas para entrar em uma sala de cinema.
 //Cada vez que uma pessoa entra, ela é removida da fila.
 
