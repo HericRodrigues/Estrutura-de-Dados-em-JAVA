@@ -1,13 +1,11 @@
-import java.sql.SQLOutput;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-
-//Exercício 1 - Soma de elementos
+        LinkedList<String> adicionar = new LinkedList<>();
+//Exercício 1 - Soma de elementos\\
 // um programa que leia 10 números inteiros em um array e imprima a soma de todos os elementos.
 
 //        int[] num = {1,2,5,9,77,56,21,29,
@@ -20,7 +18,7 @@ public class Main {
 //        }
 //        System.out.println("A soma dos dez primeiros valores são: "+soma);
 
-//Exercício 2 - Inversão de array
+//Exercício 2 - Inversão de array\\
 //Leia um array de 5 elementos e imprima o array na ordem inversa.
 
 //        int[] numbers = {1,2,5,9,77};
@@ -38,7 +36,7 @@ public class Main {
 //            System.out.println(num +"");
 //        }
 
-// Exercício 3 - Lista de nomes
+// Exercício 3 - Lista de nomes\\
 // Crie um programa que leia nomes de pessoas até que o usuário digite "sair". Armazene em um
 // ArrayList e, ao final, exiba todos os nomes cadastrados.
 
@@ -58,30 +56,119 @@ public class Main {
 //
 //        input.close();
 
-// Exercício 4 - Remoção de elementos
+// Exercício 4 - Remoção de elementos\\
 // Adapte o exercício anterior para permitir que o usuário também remova um nome da lista,
 // caso queira.
-        ArrayList<String> nomes = new ArrayList<>();
-        nomes.add("Heric");
-        nomes.add("Eduarda");
-        nomes.add("Maria Elis");
+//        ArrayList<String> nomes = new ArrayList<>();
+//        nomes.add("Heric");
+//        nomes.add("Eduarda");
+//        nomes.add("Maria Elis");
+//
+//        System.out.println("Nomes cadastrados " + nomes);
+//
+//        System.out.println("Digite o para remover: ");
+//        String nomeParaRemover = input.nextLine();
+//
+//        if (nomes.remove(nomeParaRemover)) {
+//            System.out.println(nomeParaRemover + " foi removido!");
+//        } else {
+//            System.out.println("Nome não encontrado.");
+//        }
+//
+//        System.out.println("Nomes restantes " + nomes);
+//
+//        input.close();
 
-        System.out.println("Nomes cadastrados " + nomes);
+//Exercício 5 - Fila de atendimento\\
+//Implemente uma fila de atendimento usando LinkedList. Adicione pessoas à fila e,
+//quando o comando "atender" for digitado,
+//remova a primeira pessoa e informe quem foi atendido.
 
-        System.out.println("Digite o para remover: ");
-        String nomeParaRemover = input.nextLine();
+//        String comando;
+//
+//        System.out.println("Sistema de fila de atendimento");
+//        System.out.println("Digite um nome para entrar na fila ou 'atender'" +
+//                " para chamar o próximo. ");
+//        System.out.println("Digite 'sair' para encerrar o programa");
+//
+//        while (true) {
+//            System.out.println("Comando: ");
+//            comando = input.nextLine();
+//
+//            if (comando.equalsIgnoreCase("Sair")){
+//                System.out.println("Encerrando sistema.");
+//                break;
+//            }else if (comando.equalsIgnoreCase("atender")){
+//                if (!adicionar.isEmpty()) {
+//                    String atendido = adicionar.removeFirst();
+//                    System.out.println("Atendido: " + atendido);
+//                } else {
+//                    System.out.println("A fila está vazia");
+//                }
+//            } else {
+//                adicionar.addLast(comando);
+//                System.out.println(comando + "Entrou na fila");
+//            }
+//            System.out.println("fila atual: " + adicionar);
+//        }
+//        input.close();
 
-        if (nomes.remove(nomeParaRemover)) {
-            System.out.println(nomeParaRemover + " foi removido!");
-        } else {
-            System.out.println("Nome não encontrado.");
-        }
 
-        System.out.println("Nomes restantes " + nomes);
+ //Exercício 6 - Pilha de livros\\
+//Implemente uma pilha onde cada elemento é o nome de um livro. Permita adicionar livros na pilha,
+//visualizar o topo, remover o topo, e mostrar a pilha completa.
 
-        input.close();
+//    Stack<String> pilha = new Stack<>();
+//    String livros;
+//
+//        System.out.println("Digite os nomes dos livros. Digite 'Sair' para encerrar");
+//
+//        while (true) {
+//            System.out.println("Nome do livro: ");
+//            livros = input.nextLine();
+//
+//            if (livros.equalsIgnoreCase("Sair")) {
+//                break;
+//            }
+//
+//            pilha.add(livros);
+//            System.out.println("Livro adicionado " + livros);
+//        }
+//        System.out.println("\nLista de livros cadastrados:");
+//        for (int i = 0; i < pilha.size(); i++){
+//            System.out.println((i + 1) + ". " + pilha.get(i));
+//        }
+//
+//        input.close();
+
+//Exercício 7 - Conjunto de números únicos\\
+//Leia diversos números inteiros do usuário até que ele digite 0. Armazene os números em,
+//um HashSet e, ao final, exiba todos os números (sem repetição).
+
+//        HashSet<Integer> conj = new HashSet<>();
+//        int num;
+//
+//        System.out.println("Digite numeros inteiros (0 para encerrar): ");
+//
+//        while (true) {
+//            System.out.println("Numero: ");
+//            num = input.nextInt();
+//
+//            if(num == 0) {
+//                break;
+//            }
+//
+//            conj.add(num);
+//        }
+//        System.out.println("\nNúmeros digitados (Sem repetição): ");
+//            for (int n: conj) {
+//                System.out.println(n);
+//            }
+//Exercício 7 - Simulando uma fila\\
+//Use Queue com LinkedList para simular uma fila de pessoas para entrar em uma sala de cinema.
+//Cada vez que uma pessoa entra, ela é removida da fila.
+
 
 
     }
 }
-
