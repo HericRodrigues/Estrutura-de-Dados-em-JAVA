@@ -1,10 +1,9 @@
-@ -1,260 +0,0 @@
-import java.sql.SQLOutput;
-import java.util.*;
+import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.Queue;
+import java.util.Map;
+import java.util.Scanner;
 
-public class Main {
+class EstruturaDeDados {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
@@ -118,7 +117,7 @@ public class Main {
 //        input.close();
 
 
- //Exercício 6 - Pilha de livros\\
+        //Exercício 6 - Pilha de livros\\
 //Implemente uma pilha onde cada elemento é o nome de um livro. Permita adicionar livros na pilha,
 //visualizar o topo, remover o topo, e mostrar a pilha completa.
 
@@ -253,7 +252,7 @@ public class Main {
                 default:
                     System.out.println("Opção Inválida");
             }
-        }while (opcao != 0);
+        } while (opcao != 0);
 
         input.close();
 
