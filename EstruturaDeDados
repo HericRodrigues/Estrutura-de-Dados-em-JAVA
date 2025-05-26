@@ -1,10 +1,14 @@
+@ -1,260 +0,0 @@
+import java.sql.SQLOutput;
 import java.util.*;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class Main {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        LinkedList<String> adicionar = new LinkedList<>();
+        LinkedList<String> adici = new LinkedList<>();
 //Exercício 1 - Soma de elementos\\
 // um programa que leia 10 números inteiros em um array e imprima a soma de todos os elementos.
 
@@ -167,8 +171,91 @@ public class Main {
 //Exercício 8 - Simulando uma fila\\
 //Use Queue com LinkedList para simular uma fila de pessoas para entrar em uma sala de cinema.
 //Cada vez que uma pessoa entra, ela é removida da fila.
+//    Queue<String> filaDeCinema = new LinkedList<>();
+//
+//        filaDeCinema.add("Heric");
+//        filaDeCinema.add("Eduarda");
+//        filaDeCinema.add("Maria Eliz");
+//        filaDeCinema.add("Arly");
+//        filaDeCinema.add("Braulio");
+//
+//        System.out.println("\nFila inicial: " +filaDeCinema);
+//
+//        while (!filaDeCinema.isEmpty()){
+//            String pessoa = filaDeCinema.poll();
+//            System.out.println(pessoa + ", Entrou na Sala de cinema ");
+//        }
+//
+//        System.out.println("\nTodos já entraram no cinema, fila vazia" +filaDeCinema.isEmpty());
+//
+//Exercício 9 - Agenda de contatos
+//Crie uma agenda de contatos usando HashMap onde a chave é o nome da pessoa
+// e o valor é o número de telefone. Permita adicionar, buscar e remover contatos.
+        Map<String, String> mapaAgenda = new HashMap<>();
+        int opcao;
 
+        do {
+            System.out.println("\n --Agenda de Contatos--");
+            System.out.println("1- Adcionar ");
+            System.out.println("2- Buscar ");
+            System.out.println("3- Remover ");
+            System.out.println("4- Listar Contatos");
+            System.out.println("0 Sair");
+            System.out.println("Escolha uma opção: ");
+            opcao = input.nextInt();
+            input.nextLine();
 
+            switch (opcao) {
+                case 1:
+                    System.out.println("Digite o nome da pessoa: ");
+                    String pessoa = input.nextLine();
+                    System.out.println("Digite o número de telefone");
+                    String numero = input.nextLine();
+                    mapaAgenda.put(pessoa, numero);
+                    System.out.println("Contato adicionado com Sucesso!");
+                    break;
+
+                case 2:
+                    System.out.println("Digite um nome para buscar: ");
+                    String pesq = input.nextLine();
+                    String telPesq = mapaAgenda.get(pesq);
+                    if (telPesq != null) {
+                        System.out.println("Telefone de " + pesq + ": " + telPesq);
+                    } else {
+                        System.out.println("Contato não encontrado, tente um outro nome!");
+                    }
+                    break;
+
+                case 3:
+                    System.out.println("Digite o nome para ser removido da agenda: ");
+                    String remover = input.nextLine();
+                    if (mapaAgenda.remove(remover) != null) {
+                        System.out.println("Contato remvido com sucesso!");
+                    } else {
+                        System.out.println("Contato não encontrado");
+                    }
+                    break;
+
+                case 4:
+                    System.out.println("\n ** Agenda de contatos **");
+                    if (mapaAgenda.isEmpty()) {
+                        System.out.println("Agenda vazia!");
+                    } else {
+                        for (Map.Entry<String, String> contato : mapaAgenda.entrySet()) {
+                            System.out.println("Nome: " + contato.getKey() + " | Telefone" + contato.getValue());
+                        }
+                    }
+                    break;
+
+                case 0:
+                    System.out.println("<** SAINDO **>");
+                    break;
+                default:
+                    System.out.println("Opção Inválida");
+            }
+        }while (opcao != 0);
+
+        input.close();
 
     }
 }
